@@ -21,22 +21,61 @@
     <%= form.text_field :sobrenome, id: :usuario_sobrenome %>
   </div>
 
-  <div class="field">
-    <%= form.label :usuario %>
-    <%= form.text_field :usuario, id: :usuario_usuario %>
-  </div>
+    <div class="field">
+      <%= form.label :usuario %>
+      <%= form.text_field :usuario, id: :usuario_usuario %>
+    </div>
 
     <div class="field">
       <%= form.label :email %>
       <%= form.email_field :email, id: :usuario_email %>
     </div>
 
-  <div class="field">
-    <%= form.label :senha %>
-    <%= form.text_field :senha, id: :usuario_senha %>
-  </div>
+    <div class="field">
+      <%= form.label :senha %>
+      <%= form.text_field :senha, id: :usuario_senha %>
+    </div>
 
-  <div class="actions">
+    <%= form.fields_for :enderecos do |endereco| %>
+
+        <div class="field">
+          <%= endereco.label :cep %>
+          <%= endereco.text_field :cep, id: :endereco_cep %>
+        </div>
+
+        <div class="field">
+          <%= endereco.label :rua %>
+          <%= endereco.text_field :rua, id: :endereco_rua %>
+        </div>
+
+        <div class="field">
+          <%= endereco.label :numero %>
+          <%= endereco.text_field :numero, id: :endereco_numero %>
+        </div>
+
+        <div class="field">
+          <%= endereco.label :complemento %>
+          <%= endereco.text_field :complemento, id: :endereco_complemento %>
+        </div>
+
+        <div class="field">
+          <%= endereco.label :bairro %>
+          <%= endereco.text_field :bairro, id: :endereco_bairro %>
+        </div>
+
+        <div class="field">
+          <%= endereco.label :cidade %>
+          <%= endereco.text_field :cidade, id: :endereco_cidade %>
+        </div>
+
+        <div class="field">
+          <%= endereco.label :estado %>
+          <%= endereco.text_field :estado, id: :endereco_estado %>
+        </div>
+
+    <% end %>
+
+    <div class="actions">
     <%= form.submit "Cadastro" %>
   </div>
 <% end %>

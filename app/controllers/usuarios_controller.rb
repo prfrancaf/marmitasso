@@ -15,6 +15,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new
   def new
     @usuario = Usuario.new
+    @usuario.enderecos.build
   end
 
   # GET /usuarios/1/edit
@@ -69,6 +70,6 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :sobrenome, :usuario, :senha)
+      params.require(:usuario).permit(:id, :nome, :sobrenome, :usuario, :email, :senha, enderecos_attributes: [:id, :cep, :rua, :numero, :complemento, :bairro, :cidade, :estado])
     end
 end
