@@ -1,5 +1,165 @@
-<h1>Marmitasso</h1>
-
-<a href="https://www.w3schools.com">Entrar</a>
+<%= link_to 'Entrar', login_path %>
 <%= link_to 'Cadastro', cadastro_path %>
+
+<html lang="pt-BR">
+<head>
+  <title>Marmitasso - As melhores marmitas ao seu alcance!</title>
+  <!-- stylesheet_link_tag 'style.css' %>
+  < stylesheet_link_tag 'media-queries.css' %-->
+
+  <script src="https://use.fontawesome.com/ba92f049c7.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i|Poppins:600" rel="stylesheet"/>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
+</head>
+<body>
+
+<header>
+  <div id="contenttop" class="container">
+    <h1 id="logo">Marmitasso</h1>
+    <nav>
+      <ul>
+        <li><a href="http://guide4.com.br/marmitasso/">Início</a></li>
+        <li><a href="#about">Quem Somos</a></li>
+        <li><a href="#">Dúvidas Frequentes</a></li>
+        <li><a href="#contact">Fale Conosco</a></li>
+        <li>
+          <a class="socialLink" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+          <a class="socialLink" href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="slide">
+  <article class="slideText">
+    <p>
+      Se é de um <span> MARMITASSO </span> </br>
+      que você precisa, junte-se </br>
+      ao nosso clube.
+    </p>
+    <a class="ctaClient" href="#">Sou Cliente</a>
+    <a class="ctaSupplier" href="#">Sou Fornecedor</a>
+  </article>
+  <div class="single-item">
+    <div>
+      <%= image_tag('slide1.jpg') %>
+    </div>
+    <div>
+      <!-- image_tag('slide2.jpg') -->
+    </div>
+
+  </div>
+</section>
+<section id="about">
+  <div class="container">
+    <h2>Quem Somos</h2>
+    <p>
+      This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+      nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+      Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <br/><br/>
+      Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.
+      Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam,
+      ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+    </p>
+    <p>
+    <h3> Redes Sociais</h3>
+    <a class="socialLink" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+    <a class="socialLink" href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
+    </p>
+  </div>
+
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Fale Conosco</h2>
+    <div class="half">
+      <form class="go-bottom">
+        <div>
+          <input id="name" name="name" type="text" required>
+          <label for="name">Nome</label>
+        </div>
+
+        <div>
+          <input id="email" name="email" type="text" required>
+          <label for="email">Email</label>
+        </div>
+
+        <div style="width:100%; display:block;">
+          <textarea id="message" name="message" required></textarea>
+          <label for="message">Mensagem</label>
+        </div>
+
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+
+    </div>
+    <div class="half vtop">
+      <ul id="infoContact" class="text-right clearfix">
+        <li>
+          <div class="wrapperCont">
+            <h3> Onde Estamos:</h3>
+            <p>Rua da Harmonia, 375 Sala 07 | Casa Amarela Recife - Pernambuco |CEP: 52110-000</p>
+          </div>
+          <span>
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</span>
+        </li>
+        <li>
+          <div class="wrapperCont">
+            <h3> Vamos Conversar?</h3>
+            <p>(81) 9.9999-1101 | (81) 9.9551-9999 <br/> (81) 3456-8899</p>
+          </div>
+          <span>
+							<i class="fa fa-phone" aria-hidden="true"></i>
+						</span>
+        </li>
+        <li>
+          <div class="wrapperCont">
+            <h3> Nosso email:</h3>
+            <p>falecom@marmitasso.com.br</p>
+          </div>
+          <span>
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="container">
+    <div class="half text-left"><address>MARMITASSO - 2017 |  Todos os direitos reservados.</address></div>
+    <div class="half text-right"><a href="javascript:;" id="scrollToTop"><%= image_tag('totop.png') %></a></div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="/assets/slick/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/assets/slick/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/slick/slick.min.js"></script>
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.single-item').slick({
+            dots:false,
+            fade: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            speed: 3000
+        });
+    });
+</script>
+
+
+</body>
+</html>
 
