@@ -3,3 +3,41 @@
 <h1>Lista Restaurantes</h1>
 
 <%= link_to 'Logout', logout_path, method: :delete%>
+
+<div>
+  <h2>CEP: <%= current_user.enderecos.collect(&:cep)[0] %></h2>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Tipo</th>
+    <th>Distância</th>
+    <th>Tempo</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @lojas.each do |loja| %>
+      <tr>
+        <td><%= loja.nome %></td>
+        <td><%= loja.tipo %></td>
+        <td><%=
+          url1="https://maps.googleapis.com/maps/api/distancematrix/json?origins=+"+current_user.enderecos.collect(&:cep)[0]
+          url2="&destinations=+"+loja.cep
+          url3="&mode=bicycling&language=pt-BR&key=AIzaSyBRADWHRl0s_0eIXx7YJL9nwDsjaYGF-iU"
+          url = url1+url2+url3
+          require 'net/http'
+          require 'json'
+          result = Net::HTTP.get(URI.parse(url))
+          json = JSON.parse(result)
+          reviews = json['rows']
+          reviews[0].to_s.split('=>')[3].split('"')[1]
+           %></td>
+        <td><%= loja.tempo %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

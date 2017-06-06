@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lojas
   get 'lista_restaurantes/index'
 
   get 'welcome/index'
