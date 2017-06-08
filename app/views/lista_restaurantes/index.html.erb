@@ -2,10 +2,8 @@
 
 <h1>Lista Restaurantes</h1>
 
-<%= link_to 'Logout', logout_path, method: :delete%>
-
 <div>
-  <h2>CEP: <%= current_user.enderecos.collect(&:cep)[0] %></h2>
+  <h2>Usuário: <%= current_user.nome %> CEP: <%= current_user.enderecos.collect(&:cep)[0] %></h2>
 </div>
 
 <table>
@@ -15,6 +13,7 @@
     <th>Tipo</th>
     <th>Distância</th>
     <th>Tempo</th>
+    <th>Cardapio</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -33,10 +32,11 @@
           require 'json'
           result = Net::HTTP.get(URI.parse(url))
           json = JSON.parse(result)
-          reviews = json['rows']
-          reviews[0].to_s.split('=>')[3].split('"')[1]
+          reviews = json
+          reviews['rows'][0]['elements'][0]['distance']['text']
            %></td>
         <td><%= loja.tempo %></td>
+        <td><%= link_to 'Show', cardapio_path(loja) %></td>
       </tr>
   <% end %>
   </tbody>

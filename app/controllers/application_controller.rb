@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def require_user
     if !logged_in?
       flash[:danger] = "Você deve estar loagado para executar esta operação."
-      redirect_to welcome_index_path
+      redirect_to root_path
     end
   end
 
